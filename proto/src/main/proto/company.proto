@@ -1,0 +1,19 @@
+syntax = "proto3";
+option java_multiple_files = true;
+
+package com.shamal;
+
+service EmployeeService {
+  rpc getEmployee(Employee) returns (Employee){}
+  rpc getEmployees(Employees) returns (Employees);
+}
+message Employee {
+  int32 emp_id = 1;
+  string name = 2;
+  float salary = 3;
+}
+
+message Employees {
+  repeated Employee employees = 1 ;
+}
+
